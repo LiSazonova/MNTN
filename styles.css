@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 p,
 h1,
 h2,
@@ -35,9 +39,9 @@ a {
 
 /* base */
 
-:root{
-    --text-color:white;
-    --accent-color:#FBD784;
+:root {
+    --text-color: white;
+    --accent-color: #FBD784;
     --bg-color: #0B1D26;
     --transition: all 0.3s ease;
 }
@@ -45,17 +49,27 @@ a {
 body {
     font-family: 'Gilroy';
     font-size: 18px;
-        background-color: var(--bg-color);
-        background-image: url('./images/BG/bg.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        color: var(--text-color);
+    background-color: var(--bg-color);
+    background-image: url('./images/BG/bg.jpg');
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    color: var(--text-color);
 }
 
 .container-wide {
     max-width: 1790px;
     padding: 0 15px;
     margin: 0 auto;
+}
+
+.container {
+    max-width: 1492px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.accent {
+    color: var(--accent-color);
 }
 
 /* header */
@@ -74,12 +88,8 @@ body {
     font-family: 'ChronicleDisplay';
     font-size: 32px;
     letter-spacing: 1.2px;
-    font-weight: 700; 
+    font-weight: 700;
     transition: var(--transition);
-}
-
-.logo:hover {
-    transform: scale(1.2);
 }
 
 .nav ul {
@@ -96,16 +106,30 @@ body {
     color: var(--accent-color);
 }
 
-
-.login  {
+.login {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
 .account {
+    position: relative;
+    display: inline-block;
     font-weight: 700;
+    padding-left: 32px;
     transition: var(--transition);
+}
+
+.account::before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    background-image: url(./images/icons/account.svg);
 }
 
 .account:hover {
@@ -121,10 +145,10 @@ body {
 
 .social-media {
     display: flex;
-        gap: 24px;
-        writing-mode: vertical-rl;
-        text-align: center;
-        margin-top: 72px;
+    gap: 24px;
+    writing-mode: vertical-rl;
+    text-align: center;
+    margin-top: 72px;
 }
 
 .social-media-descr {
@@ -132,50 +156,192 @@ body {
 }
 
 .hero-text {
-    text-align: left;
-        max-width: 950px;
-        margin: 0 auto;
+    max-width: 950px;
+    margin: 0 auto;
+    transition: var(--transition);
+}
+
+.hero-text:hover {
+    transform: translateY(5%);
 }
 
 .subtitle {
-        display: flex;
-        align-items: center;
-        gap: 32px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
     margin-bottom: 32px;
 }
 
 .divider {
     width: 72px;
-        height: 2px;
-        background-color: var(--accent-color);
+    height: 2px;
+    background-color: var(--accent-color);
 }
 
 .subtitle-text {
     font-weight: 800;
-        text-transform: uppercase;
-        color: var(--accent-color);
-        letter-spacing: 0.33em;
+    text-transform: uppercase;
+    color: var(--accent-color);
+    letter-spacing: 0.33em;
 }
 
 .hero-title {
     font-family: 'ChronicleDisplay';
-        font-size: 88px;
-        margin-bottom: 32px;
-        font-weight: 600;
-        line-height: 1.13636;
-            text-transform: capitalize;
+    font-size: 88px;
+    margin-bottom: 32px;
+    font-weight: 600;
+    line-height: 1.13636;
+    text-transform: capitalize;
 }
 
 .subtitle-bottom {
     display: flex;
-        align-items: center;
-        gap: 16px;
+    align-items: center;
+    gap: 16px;
 }
 
 .scroll-down {
+    display: inline-block;
+    position: relative;
     font-weight: 700;
+    padding-right: 32px;
+}
+
+.scroll-down::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 24px;
+    background-image: url(./../images/icons/arrow_down.svg);
 }
 
 .hero-container {
     display: flex;
+}
+
+/* about */
+
+.article {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+.article-text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-left: 150px;
+    gap: 27px;
+    max-width: 632px;
+}
+
+.article-text::before {
+    position: absolute;
+    top: -103px;
+    left: 0;
+    display: block;
+    content: attr(data-number);
+    width: 240px;
+    height: 240px;
+    font-size: 240px;
+    font-weight: 700;
+    color: var(--text-color);
+    opacity: 0.1;
+}
+
+.about .scroll-down::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 16px;
+    background-image: url(./images/icons/arrow_right.svg);
+}
+
+.about .subtitle {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.article-title {
+    font-family: 'ChronicleDisplay';
+    font-size: 64px;
+    font-weight: 600;
+    width: 555px;
+    line-height: 1.125;
+}
+
+.article-descr {
+    font-weight: 700;
+    line-height: 1.77778;
+}
+
+.article-reverse {
+    flex-direction: row-reverse;
+}
+
+/* footer */
+
+.footer {
+    padding-bottom: 120px;
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-copyright {
+    flex: 1;
+}
+
+.footer .logo {
+    margin-bottom: 24px;
+}
+
+.footer-descr {
+    font-weight: 700;
+    line-height: 1.77778;
+    margin-bottom: 122px;
+    max-width: 303px;
+}
+
+.footer-terms {
+    font-weight: 500;
+    line-height: 1.77778;
+    opacity: 0.5;
+}
+
+.footer-nav:not(:last-child) {
+    margin-right: 212px;
+}
+
+.footer-nav-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.33333;
+    margin-bottom: 24px;
+    color: var(--accent-color);
+}
+
+.footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-nav li {
+    font-weight: 500;
+    line-height: 1.77778;
 }
