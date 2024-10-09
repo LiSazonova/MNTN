@@ -1,0 +1,181 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* base */
+
+:root{
+    --text-color:white;
+    --accent-color:#FBD784;
+    --bg-color: #0B1D26;
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Gilroy';
+    font-size: 18px;
+        background-color: var(--bg-color);
+        background-image: url('./images/BG/bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        color: var(--text-color);
+}
+
+.container-wide {
+    max-width: 1790px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* header */
+
+.header {
+    padding-top: 64px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'ChronicleDisplay';
+    font-size: 32px;
+    letter-spacing: 1.2px;
+    font-weight: 700; 
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: scale(1.2);
+}
+
+.nav ul {
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+
+.login  {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.account {
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.account:hover {
+    color: var(--accent-color);
+}
+
+/* hero */
+
+.hero {
+    padding-top: 198px;
+    padding-bottom: 843px;
+}
+
+.social-media {
+    display: flex;
+        gap: 24px;
+        writing-mode: vertical-rl;
+        text-align: center;
+        margin-top: 72px;
+}
+
+.social-media-descr {
+    font-weight: 700;
+}
+
+.hero-text {
+    text-align: left;
+        max-width: 950px;
+        margin: 0 auto;
+}
+
+.subtitle {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+    margin-bottom: 32px;
+}
+
+.divider {
+    width: 72px;
+        height: 2px;
+        background-color: var(--accent-color);
+}
+
+.subtitle-text {
+    font-weight: 800;
+        text-transform: uppercase;
+        color: var(--accent-color);
+        letter-spacing: 0.33em;
+}
+
+.hero-title {
+    font-family: 'ChronicleDisplay';
+        font-size: 88px;
+        margin-bottom: 32px;
+        font-weight: 600;
+        line-height: 1.13636;
+            text-transform: capitalize;
+}
+
+.subtitle-bottom {
+    display: flex;
+        align-items: center;
+        gap: 16px;
+}
+
+.scroll-down {
+    font-weight: 700;
+}
+
+.hero-container {
+    display: flex;
+}
